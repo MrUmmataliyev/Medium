@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Medium.Domain.Entities
+namespace Medium.Domain.DTOs
 {
-    public class User
+    public class UserDTO
     {
-        public Guid Id { get; set; } = Guid.NewGuid();
         public string? Name { get; set; }
         public string? UserName { get; set; }
         public string? Email { get; set; }
@@ -18,11 +17,5 @@ namespace Medium.Domain.Entities
 
         public string Login { get; set; }
         public string Password { get; set; }
-
-        public DateTimeOffset JoinDate { get; set; } = DateTimeOffset.UtcNow;
-        public DateTime ModifiedDate { get; set; }
-        public DateTime DeletedDaate { get; set; }
-        public bool IsDeleted { get; set; } = false;
-
     }
 }

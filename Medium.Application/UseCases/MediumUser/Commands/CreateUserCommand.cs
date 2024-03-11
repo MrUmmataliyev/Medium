@@ -1,14 +1,14 @@
-﻿using System;
+﻿using MediatR;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Medium.Domain.Entities
+namespace Medium.Application.UseCases.MediumUser.Commands
 {
-    public class User
+    public class CreateUserCommand :IRequest
     {
-        public Guid Id { get; set; } = Guid.NewGuid();
         public string? Name { get; set; }
         public string? UserName { get; set; }
         public string? Email { get; set; }
@@ -19,10 +19,8 @@ namespace Medium.Domain.Entities
         public string Login { get; set; }
         public string Password { get; set; }
 
-        public DateTimeOffset JoinDate { get; set; } = DateTimeOffset.UtcNow;
-        public DateTime ModifiedDate { get; set; }
-        public DateTime DeletedDaate { get; set; }
-        public bool IsDeleted { get; set; } = false;
+        
 
+        
     }
 }
