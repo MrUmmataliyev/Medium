@@ -21,7 +21,6 @@
 
   <ItemGroup>
     <Folder Include="UseCases\MediumPost\" />
-    <Folder Include="UseCases\MediumUser\Queries\" />
   </ItemGroup>
 
 </Project>
