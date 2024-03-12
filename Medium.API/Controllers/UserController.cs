@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Medium.Application.UseCases.MediumUser.Commands;
 using Medium.Application.UseCases.MediumUser.Queries;
+using Medium.Domain.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -30,6 +31,23 @@ namespace Medium.API.Controllers
             var result = await _mediator.Send(new GetByIdUserCommandQuery() { Id=Id});
 
             return Ok(result);
+        }
+
+
+        [HttpPut]
+        public async Task<ActionResult<User>> UpdateUser(UpdateUserCommand command)
+        {
+            var result = await _mediator.Send(command);
+
+            return Ok(result);
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteUser(Guid Id)
+        {
+            var result = await _mediator.Send(new DeleteUserCommand() { Id = Id });
+
+            return Ok("Deleted");
         }
     }
 }
